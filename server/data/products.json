@@ -1,0 +1,46 @@
+[
+  {
+    "id": "smk-001",
+    "name": "Bolga Indigo Fugu",
+    "description": "Hand-loomed cotton strips dyed in deep indigo, stitched in the traditional Bolgatanga pattern. Loose fit, ideal for festivals and durbars.",
+    "price": 450,
+    "currency": "GHS",
+    "sizes": ["M", "L", "XL"],
+    "color": "Indigo",
+    "stock": 12,
+    "image": "smock-indigo.jpg"
+  },
+  {
+    "id": "smk-002",
+    "name": "Tamale Rust Batakari",
+    "description": "Rust and cream strip-weave, the classic northern batakari silhouette with hand-embroidered collar detail.",
+    "price": 520,
+    "currency": "GHS",
+    "sizes": ["S", "M", "L"],
+    "color": "Rust",
+    "stock": 8,
+    "image": "smock-rust.jpg"
+  },
+  {
+    "id": "smk-003",
+    "name": "Yendi Black & White Stripe",
+    "description": "High-contrast black and white strip weave, a bolder take on the traditional pattern for formal occasions.",
+    "price": 480,
+    "currency": "GHS",
+    "sizes": ["M", "L", "XL", "XXL"],
+    "color": "Black/White",
+    "stock": 5,
+    "image": "smock-blackwhite.jpg"
+  },
+  {
+    "id": "smk-004",
+    "name": "Children's Millet-Gold Fugu",
+    "description": "A scaled-down weave in warm ochre tones, sized for children attending naming ceremonies and festivals.",
+    "price": 220,
+    "currency": "GHS",
+    "sizes": ["4-6yrs", "7-9yrs", "10-12yrs"],
+    "color": "Gold",
+    "stock": 15,
+    "image": "smock-gold-kids.jpg"
+  }
+]

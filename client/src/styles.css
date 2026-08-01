@@ -1,0 +1,328 @@
+:root {
+  --cotton: #e7dac0;
+  --cotton-deep: #d8c7a3;
+  --purple: #4a2255;
+  --purple-soft: #6d3f79;
+  --rust: #9c4a2e;
+  --charcoal: #211d1a;
+  --gold: #c08a2e;
+  --cream: #f1e9d8;
+
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cotton);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  margin: 0 0 0.4em;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- Signature element: the woven strip. Smocks are physically sewn from
+   narrow hand-loomed strips, so this repeating vertical-band pattern stands
+   in for stitching/dividers/loading states across the site instead of a
+   generic rule or gradient. --- */
+.strip-band {
+  height: 10px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--purple) 0px,
+    var(--purple) 14px,
+    var(--rust) 14px,
+    var(--rust) 20px,
+    var(--cream) 20px,
+    var(--cream) 26px,
+    var(--purple) 26px,
+    var(--purple) 40px
+  );
+}
+
+.strip-divider {
+  height: 6px;
+  margin: 48px 0;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--charcoal) 0 3px,
+    transparent 3px 10px
+  );
+  opacity: 0.35;
+}
+
+/* --- Header --- */
+.site-header {
+  background: var(--purple);
+  color: var(--cream);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.brand span {
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  font-weight: 500;
+}
+
+.cart-pill {
+  background: var(--rust);
+  color: var(--cream);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* --- Hero --- */
+.hero {
+  padding: 64px 0 48px;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  max-width: 14ch;
+}
+
+.hero p {
+  max-width: 52ch;
+  font-size: 1.1rem;
+  color: var(--purple-soft);
+}
+
+/* --- Product grid --- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 28px;
+  margin: 32px 0 64px;
+}
+
+.product-card {
+  background: var(--cream);
+  border: 1px solid var(--cotton-deep);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.15s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.product-card .thumb {
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(160deg, var(--purple-soft), var(--purple));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 12px;
+}
+
+.product-card .info {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.product-card h3 {
+  font-size: 1.05rem;
+}
+
+.product-card .price {
+  font-weight: 600;
+  color: var(--rust);
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  padding: 12px 22px;
+  font-weight: 600;
+  background: var(--rust);
+  color: var(--cream);
+  transition: background 0.15s ease;
+}
+
+.btn:hover {
+  background: var(--purple);
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1.5px solid var(--purple);
+  color: var(--purple);
+}
+
+.btn.secondary:hover {
+  background: var(--purple);
+  color: var(--cream);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- Product page --- */
+.product-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  padding: 48px 0;
+}
+
+.product-page .thumb-large {
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(160deg, var(--purple-soft), var(--purple));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
+  font-family: var(--font-display);
+  padding: 24px;
+  text-align: center;
+}
+
+.size-options {
+  display: flex;
+  gap: 10px;
+  margin: 16px 0 24px;
+  flex-wrap: wrap;
+}
+
+.size-chip {
+  border: 1.5px solid var(--purple);
+  padding: 8px 14px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: transparent;
+}
+
+.size-chip.active {
+  background: var(--purple);
+  color: var(--cream);
+}
+
+@media (max-width: 720px) {
+  .product-page {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Cart / Checkout --- */
+.cart-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--cotton-deep);
+}
+
+.cart-line .meta {
+  color: var(--purple-soft);
+  font-size: 0.9rem;
+}
+
+.qty-input {
+  width: 50px;
+  padding: 6px;
+  border: 1.5px solid var(--cotton-deep);
+  background: var(--cream);
+  text-align: center;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 24px 0;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.form-row label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form-row input, .form-row textarea {
+  padding: 12px;
+  border: 1.5px solid var(--cotton-deep);
+  background: var(--cream);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 64px 0;
+  color: var(--purple-soft);
+}
+
+.site-footer {
+  background: var(--charcoal);
+  color: var(--cotton);
+  padding: 32px 0;
+  margin-top: 64px;
+  text-align: center;
+  font-size: 0.9rem;
+}
