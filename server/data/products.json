@@ -1,14 +1,14 @@
 [
   {
     "id": "smk-001",
-    "name": "Bolga Indigo Fugu",
-    "description": "Hand-loomed cotton strips dyed in deep indigo, stitched in the traditional Bolgatanga pattern. Loose fit, ideal for festivals and durbars.",
-    "price": 450,
+    "name": "Bolga-Black-green Fugu",
+    "description": "Hand-loomed cotton strips dyed in deep black and green, stitched in the traditional Bolgatanga pattern. Loose fit, ideal for festivals and durbars.",
+    "price": 600,
     "currency": "GHS",
     "sizes": ["M", "L", "XL"],
-    "color": "Indigo",
-    "stock": 12,
-    "image": "smock-indigo.jpg"
+    "color": "black and green",
+    "stock": 1,
+    "image": "Bolga-Black-green.jpg"
   },
   {
     "id": "smk-002",
