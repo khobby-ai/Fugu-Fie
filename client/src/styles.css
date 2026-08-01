@@ -166,6 +166,7 @@ button {
   font-size: 0.85rem;
   text-align: center;
   padding: 12px;
+  overflow: hidden;
 }
 
 .product-card .info {
@@ -233,6 +234,7 @@ button {
   font-family: var(--font-display);
   padding: 24px;
   text-align: center;
+  overflow: hidden;
 }
 
 .size-options {

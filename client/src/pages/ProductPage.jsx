@@ -20,7 +20,17 @@ export default function ProductPage({ productId, onNavigate }) {
 
   return (
     <div className="container product-page">
-      <div className="thumb-large">{product.name}</div>
+      <div className="thumb-large">
+        {product.image ? (
+          <img
+            src={`/products/${product.image}`}
+            alt={product.name}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        ) : (
+          product.name
+        )}
+      </div>
       <div>
         <h1>{product.name}</h1>
         <p>{product.description}</p>
