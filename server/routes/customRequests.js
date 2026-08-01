@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import fs from 'fs';
 import path from 'path';
-import { notifyWhatsApp } from '../notify.js';
+import { notifyOwner } from '../notify.js';
 
 const router = Router();
 const DATA_PATH = path.join(process.cwd(), 'data', 'custom-requests.json');
@@ -30,8 +30,9 @@ router.post('/', (req, res) => {
   requests.push(request);
   writeRequests(requests);
 
-  notifyWhatsApp(
-    `📸 Custom smock request — ${name} (${phone})\nThey were sent to WhatsApp directly with a reference photo — check your chats and talk through what they need.`
+  notifyOwner(
+    '📸 Custom smock request — Fugu Fie',
+    `${name} (${phone})\nThey were sent to WhatsApp directly with a reference photo — check your chats and talk through what they need.`
   );
 
   res.status(201).json(request);

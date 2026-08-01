@@ -5,12 +5,22 @@ import ProductCard from '../components/ProductCard.jsx';
 export default function Catalog({ onView }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    getProducts().then((data) => {
-      setProducts(data);
-      setLoading(false);
-    });
+    getProducts()
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setProducts(data);
+        } else {
+          setError('The store server responded, but not with a product list. It may still be starting up — try refreshing in a moment.');
+        }
+        setLoading(false);
+      })
+      .catch(() => {
+        setError("Couldn't reach the store server. It may still be starting up, or there's a connection issue — try refreshing in a moment.");
+        setLoading(false);
+      });
   }, []);
 
   return (
@@ -27,6 +37,8 @@ export default function Catalog({ onView }) {
       <div className="container">
         {loading ? (
           <p>Loading the collection…</p>
+        ) : error ? (
+          <p style={{ color: 'var(--rust)' }}>{error}</p>
         ) : (
           <div className="product-grid">
             {products.map((p) => (

@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import fs from 'fs';
 import path from 'path';
-import { notifyWhatsApp } from '../notify.js';
+import { notifyOwner } from '../notify.js';
 
 const router = Router();
 const DATA_PATH = path.join(process.cwd(), 'data', 'orders.json');
@@ -38,12 +38,14 @@ router.post('/', (req, res) => {
 
   const itemsSummary = items.map((i) => `${i.qty}x ${i.name} (${i.size})`).join(', ');
   if (deliveryLocation === 'international') {
-    notifyWhatsApp(
-      `🌍 International quote request — ${customer.name} (${customer.phone})\n${itemsSummary}\nSubtotal: GHS ${total}\nCountry: ${customer.country || 'not given'}\nWork out shipping and send them a payment link.`
+    notifyOwner(
+      '🌍 International quote request — Fugu Fie',
+      `${customer.name} (${customer.phone})\n${itemsSummary}\nSubtotal: GHS ${total}\nCountry: ${customer.country || 'not given'}\nWork out shipping and send them a payment link.`
     );
   } else {
-    notifyWhatsApp(
-      `🧾 New order started — ${customer.name} (${customer.phone})\n${itemsSummary}\nTotal: GHS ${total}\n(This pings again once payment is confirmed.)`
+    notifyOwner(
+      '🧾 New order started — Fugu Fie',
+      `${customer.name} (${customer.phone})\n${itemsSummary}\nTotal: GHS ${total}\n(This notifies again once payment is confirmed.)`
     );
   }
 
@@ -59,8 +61,9 @@ router.patch('/:id/mark-paid', (req, res) => {
   order.paidAt = new Date().toISOString();
   writeOrders(orders);
 
-  notifyWhatsApp(
-    `✅ Payment confirmed — ${order.customer.name} (${order.customer.phone})\nTotal: GHS ${order.total}\nDeliver to: ${order.customer.address}`
+  notifyOwner(
+    '✅ Payment confirmed — Fugu Fie',
+    `${order.customer.name} (${order.customer.phone})\nTotal: GHS ${order.total}\nDeliver to: ${order.customer.address}`
   );
 
   res.json(order);
