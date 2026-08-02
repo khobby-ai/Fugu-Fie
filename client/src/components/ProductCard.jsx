@@ -1,12 +1,13 @@
 export default function ProductCard({ product, onView }) {
+  const firstImage = product.images?.[0] || product.image;
   return (
     <div className="product-card">
       <div className="thumb">
-        {product.image ? (
+        {firstImage ? (
           <img
-            src={`/products/${product.image}`}
+            src={`/products/${firstImage}`}
             alt={product.name}
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            style={{ width: '100%', height: '100%', objectFit: 'contain' }}
           />
         ) : (
           product.name
