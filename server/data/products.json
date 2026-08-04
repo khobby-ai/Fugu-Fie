@@ -7,7 +7,7 @@
     "currency": "GHS",
     "sizes": ["S", "M", "L"],
     "color": "Green and Black",
-    "stock": 12,
+    "stock": 15,
     "images": ["Green and Black.jpg"]
   },
   {
@@ -18,8 +18,8 @@
     "currency": "GHS",
     "sizes": ["S", "M", "L"],
     "color": "Ash and white",
-    "stock": 8,
-    "images": ["Ash and white.jpg"]
+    "stock": 15,
+    "images": ["Ash and white.jpeg"]
   },
   {
     "id": "smk-003",
@@ -29,8 +29,8 @@
     "currency": "GHS",
     "sizes": ["S", "M", "L"],
     "color": "Blue and White",
-    "stock": 5,
-    "images": ["Blue and White.jpg"]
+    "stock": 15,
+    "images": ["Blue and White.jpeg"]
   },
   {
     "id": "smk-004",
@@ -41,7 +41,7 @@
     "sizes": ["S", "M", "L"],
     "color": "Gold and Green",
     "stock": 15,
-    "images": ["Gold and Green.jpg"]
+    "images": ["Gold and Green.jpeg"]
   },
   {
     "id": "smk-005",
@@ -52,6 +52,6 @@
     "sizes": ["S", "M", "L"],
     "color": "Red and Blue",
     "stock": 15,
-    "images": ["Red and Blue.jpg"]
+    "images": ["Red and Blue.jpeg"]
   }
 ]
