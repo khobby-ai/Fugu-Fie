@@ -1,46 +1,57 @@
 [
   {
     "id": "smk-001",
-    "name": "Bolga Indigo Fugu",
-    "description": "Hand-loomed cotton strips dyed in deep indigo, stitched in the traditional Bolgatanga pattern. Loose fit, ideal for festivals and durbars.",
-    "price": 450,
+    "name": "Green and Black",
+    "description": "Hand-loomed cotton strips dyed in deep Green and Black, stitched in the traditional Bolgatanga pattern. Loose fit, ideal for festivals and durbars.",
+    "price": 600,
     "currency": "GHS",
-    "sizes": ["M", "L", "XL"],
-    "color": "Indigo",
+    "sizes": ["S", "M", "L"],
+    "color": "Green and Black",
     "stock": 12,
-    "images": ["smock1.jpg"]
+    "images": ["Green and Black.jpg"]
   },
   {
     "id": "smk-002",
-    "name": "Tamale Rust Batakari",
-    "description": "Rust and cream strip-weave, the classic northern batakari silhouette with hand-embroidered collar detail.",
-    "price": 520,
+    "name": "Ash and white",
+    "description": "Ash and white, the classic northern batakari silhouette with hand-embroidered collar detail.",
+    "price": 600,
     "currency": "GHS",
     "sizes": ["S", "M", "L"],
-    "color": "Rust",
+    "color": "Ash and white",
     "stock": 8,
-    "images": []
+    "images": ["Ash and white.jpg"]
   },
   {
     "id": "smk-003",
-    "name": "Yendi Black & White Stripe",
-    "description": "High-contrast black and white strip weave, a bolder take on the traditional pattern for formal occasions.",
-    "price": 480,
+    "name": "Blue and White Stripe",
+    "description": "High-contrast Blue and White strip weave, a bolder take on the traditional pattern for formal occasions.",
+    "price": 600,
     "currency": "GHS",
-    "sizes": ["M", "L", "XL", "XXL"],
-    "color": "Black/White",
+    "sizes": ["S", "M", "L"],
+    "color": "Blue and White",
     "stock": 5,
-    "images": []
+    "images": ["Blue and White.jpg"]
   },
   {
     "id": "smk-004",
-    "name": "Children's Millet-Gold Fugu",
-    "description": "A scaled-down weave in warm ochre tones, sized for children attending naming ceremonies and festivals.",
-    "price": 220,
+    "name": "Gold and Green stripe",
+    "description": "High-contrast Gold and Green strip weave, a bolder take on the traditional pattern for formal occasions.",
+    "price": 600,
     "currency": "GHS",
-    "sizes": ["4-6yrs", "7-9yrs", "10-12yrs"],
-    "color": "Gold",
+    "sizes": ["S", "M", "L"],
+    "color": "Gold and Green",
     "stock": 15,
-    "images": []
+    "images": ["Gold and Green.jpg"]
+  }
+  {
+    "id": "smk-005",
+    "name": "Red and Blue stripe",
+    "description": "High-contrast Red and Blue strip weave, a bolder take on the traditional pattern for formal occasions.",
+    "price": 600,
+    "currency": "GHS",
+    "sizes": ["S", "M", "L"],
+    "color": "Red and Blue",
+    "stock": 15,
+    "images": ["Red and Blue.jpg"]
   }
 ]
