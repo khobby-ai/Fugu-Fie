@@ -16,12 +16,17 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   background: var(--cotton);
   color: var(--charcoal);
   font-family: var(--font-body);
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -64,6 +69,16 @@ button {
     var(--purple) 26px,
     var(--purple) 40px
   );
+  animation: weaveStrip 3s linear infinite;
+}
+
+@keyframes weaveStrip {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 0;
+  }
 }
 
 .strip-divider {
@@ -107,6 +122,8 @@ button {
   gap: 28px;
   align-items: center;
   font-weight: 500;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .cart-pill {
@@ -116,22 +133,45 @@ button {
   border-radius: 999px;
   font-weight: 600;
   font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 /* --- Hero --- */
-.hero {
-  padding: 64px 0 48px;
+.hero-banner {
+  position: relative;
+  padding: 72px 0 56px;
+  background-color: var(--purple);
+  background-image:
+    linear-gradient(180deg, rgba(74, 34, 85, 0.72), rgba(33, 29, 26, 0.55)),
+    url('/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
 }
 
-.hero h1 {
+.hero-banner h1 {
+  color: var(--cream);
   font-size: clamp(2.4rem, 5vw, 3.6rem);
   max-width: 14ch;
+  animation: fadeUp 0.6s ease-out both;
 }
 
-.hero p {
+.hero-banner p {
+  color: var(--cotton);
   max-width: 52ch;
   font-size: 1.1rem;
-  color: var(--purple-soft);
+  animation: fadeUp 0.6s ease-out 0.15s both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* --- Product grid --- */
@@ -148,11 +188,20 @@ button {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: transform 0.15s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .product-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(33, 29, 26, 0.15);
+}
+
+.product-card .thumb img {
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .thumb img {
+  transform: scale(1.04);
 }
 
 .product-card .thumb {
@@ -353,4 +402,56 @@ button {
   margin-top: 64px;
   text-align: center;
   font-size: 0.9rem;
+}
+
+/* --- Mobile adjustments --- */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .site-header .container {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .nav-links {
+    gap: 16px;
+    font-size: 0.9rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .brand {
+    font-size: 1.3rem;
+  }
+
+  .hero-banner {
+    padding: 48px 0 36px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+    margin: 24px 0 48px;
+  }
+
+  .product-page {
+    padding: 32px 0;
+    gap: 28px;
+  }
+
+  .thumb-gallery {
+    flex-wrap: wrap;
+  }
+
+  .cart-line {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .cart-line > div:last-child {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
