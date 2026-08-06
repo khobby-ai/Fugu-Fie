@@ -24,14 +24,16 @@ export default function Catalog({ onView }) {
   }, []);
 
   return (
-    <>
-      <section className="hero container">
-        <h1>Hand-loomed smocks, strip by strip.</h1>
-        <p>
-          Every fugu on this site is stitched from narrow, hand-woven cotton strips —
-          sourced directly from weavers in the north. Shop the collection, order in
-          your size, pay by card or Mobile Money.
-        </p>
+    <div className="landing-bg">
+      <section className="hero-banner">
+        <div className="container">
+          <h1>Hand-loomed smocks, strip by strip.</h1>
+          <p>
+            Every fugu on this site is stitched from narrow, hand-woven cotton strips —
+            sourced directly from weavers in the north. Shop the collection, order in
+            your size, pay by card or Mobile Money.
+          </p>
+        </div>
       </section>
       <div className="strip-divider container" />
       <div className="container">
@@ -47,6 +49,6 @@ export default function Catalog({ onView }) {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }

@@ -22,7 +22,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--cotton);
+  background-color: var(--cotton);
   color: var(--charcoal);
   font-family: var(--font-body);
   line-height: 1.5;
@@ -134,6 +134,17 @@ button {
   font-weight: 600;
   font-size: 0.9rem;
   white-space: nowrap;
+}
+
+/* --- Landing page background photo (this page only, not the whole site) --- */
+.landing-bg {
+  background-color: var(--cotton);
+  background-image:
+    linear-gradient(rgba(231, 218, 192, 0.88), rgba(231, 218, 192, 0.88)),
+    url('/site-bg.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
 }
 
 /* --- Hero --- */
